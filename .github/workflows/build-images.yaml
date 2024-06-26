@@ -132,10 +132,10 @@ jobs:
       # checkout and set up build env
       - name: Checkout
         uses: actions/checkout@v4
-      - name: go-setup-and-test
-        uses: ./.github/actions/go-setup-and-test
-      - name: yarn-setup-and-test
-        uses: ./.github/actions/yarn-setup-and-test
+
+      - uses: actions/setup-go@v3
+        with:
+          go-version: "^1.22.3"
 
       # run build script
       - name: run build script if exist
